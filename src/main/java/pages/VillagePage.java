@@ -5,5 +5,5 @@ import rules.PageRules;
 /**
  * Created by Sacred on 18.02.2017.
  */
-public class Village extends PageRules {
+public class VillagePage extends PageRules {
 }
