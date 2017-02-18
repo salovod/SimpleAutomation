@@ -10,14 +10,30 @@ import static com.codeborne.selenide.Selenide.$;
 public class Header extends PageRules {
 
     private String headerElement = "#n";
-
+    private int number;
 
     public void selectHeader(String locator) {
-        int number;
+
         switch (locator) {
             case "resource":
                 number = 1;
-                $(headerElement + number).click();
+                break;
+            case "village":
+                number = 2;
+                break;
+            case "map":
+                number = 3;
+                break;
+            case "statistic":
+                number = 4;
+                break;
+            case "reports":
+                number = 5;
+                break;
+            case "messages":
+                number = 6;
+                break;
         }
+        $(headerElement + number).click();
     }
 }
