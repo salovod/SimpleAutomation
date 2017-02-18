@@ -24,7 +24,7 @@ public class DriverConfiguration {
         Configuration.startMaximized = true;
         Configuration.browser = browserName;
         Configuration.timeout = timeOut;
-        open("http://google.ru");
+        open("http://ts2.travian.ru/?lang=ru");
     }
 
 }
