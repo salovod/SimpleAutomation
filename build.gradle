@@ -1,28 +1,14 @@
+group 'Simple'
+version '1.0-SNAPSHOT'
+
 apply plugin: 'java'
-sourceCompatibility = JavaVersion.VERSION_1_7
-targetCompatibility = JavaVersion.VERSION_1_7
-version = '1.0-SNAPSHOT'
-defaultTasks 'clean', 'test'
+
+sourceCompatibility = 1.5
 
 repositories {
     mavenCentral()
 }
 
-configurations {
-    agent
-}
-
 dependencies {
-    testCompile "ru.yandex.qatools.allure:allure-testng-adaptor:${allureVersion}"
-}
-
-
-test.doFirst {
-    jvmArgs "-javaagent:${configurations.agent.singleFile}"
-}
-
-test {
-    useTestNG() {
-//        suiteXmlFiles << new File(rootDir, "testng.xml") //This is how to add custom testng.xml
-    }
+    testCompile group: 'junit', name: 'junit', version: '4.11'
 }
