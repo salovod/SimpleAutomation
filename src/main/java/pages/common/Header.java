@@ -2,6 +2,7 @@ package pages.common;
 
 import rules.PageRules;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 /**
@@ -10,10 +11,11 @@ import static com.codeborne.selenide.Selenide.$;
 public class Header extends PageRules {
 
     private String headerElement = "#n";
-    private int number;
 
     public void selectHeader(String locator) {
 
+        int number = 1;
+        $(headerElement + number).should(visible);
         switch (locator) {
             case "resource":
                 number = 1;
