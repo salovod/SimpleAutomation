@@ -26,5 +26,4 @@ public class DriverConfiguration {
         Configuration.timeout = timeOut;
         open("http://ts2.travian.ru/?lang=ru");
     }
-
 }
