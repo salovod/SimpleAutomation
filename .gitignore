@@ -1,2 +1,3 @@
-Java+Gradle+TestNG+Selenide
+# Created by .ignore support plugin (hsz.mobi)
 /.idea/
+/target/

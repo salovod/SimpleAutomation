@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SUITENAME" verbose="10">
+    <test name="Smoke tests" preserve-order="true">
+        <classes>
+            <class name="FirstTest">
+                <methods>
+                    <include name="firstTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+ 
+ 

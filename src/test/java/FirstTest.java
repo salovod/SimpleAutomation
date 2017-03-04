@@ -1,5 +1,3 @@
-package tests;
-
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.common.Header;

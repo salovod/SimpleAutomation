@@ -1,2 +1,2 @@
 # SimpleAutomation
-Java + Gradle + TestNG + Selenide
+Java+Selenide+TestNG+Maven
