@@ -8,6 +8,9 @@ Resources checker -> return integer for calculation
 Building process for each type -> create separate package with classes for building
 
 //TODO
+Logic to create soldiers
 
+//TODO
+Logic to send/cancel/time army
 
 
