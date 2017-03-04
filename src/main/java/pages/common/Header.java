@@ -13,7 +13,6 @@ public class Header extends PageRules {
     private String headerElement = "#n";
 
     public void selectHeader(String locator) {
-
         int number = 1;
         $(headerElement + number).should(visible);
         switch (locator) {

@@ -1,7 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -10,12 +9,12 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class Resources {
 
-    private SelenideElement cropWareHouseLocator = $(By.id("stockBarGranary"));
-    private SelenideElement barWareHouseLocator = $(By.id("stockBarWarehouse"));
-    private SelenideElement woodLocator = $(By.id("l1"));
-    private SelenideElement clayLocator = $(By.id("l2"));
-    private SelenideElement ironLocator = $(By.id("l3"));
-    private SelenideElement cropLocator = $(By.id("l4"));
+    private SelenideElement cropWareHouseLocator = $("#stockBarGranary");
+    private SelenideElement barWareHouseLocator = $("#stockBarWarehouse");
+    private SelenideElement woodLocator = $("#l1");
+    private SelenideElement clayLocator = $("#l2");
+    private SelenideElement ironLocator = $("#l3");
+    private SelenideElement cropLocator = $("#l4");
 
     private int availableWood;
     private int availableIron;

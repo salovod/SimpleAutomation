@@ -1,5 +1,6 @@
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import pages.Resources;
 import pages.common.Header;
 import preparation.DriverConfiguration;
 
@@ -8,6 +9,7 @@ import preparation.DriverConfiguration;
  */
 public class FirstTest extends DriverConfiguration {
 
+    Resources resources = new Resources();
 
     @Test
     public void firstTest() throws InterruptedException {
@@ -26,6 +28,10 @@ public class FirstTest extends DriverConfiguration {
         Header header = new Header();
         header.selectHeader("");
         Thread.sleep(3000);
+        System.out.println(resources.getAvailableResource("wood"));
+        System.out.println(resources.getAvailableResource("clay"));
+        System.out.println(resources.getAvailableResource("iron"));
+        System.out.println(resources.getAvailableResource("crop"));
     }
 
     //TODO make login -> OP && EC
