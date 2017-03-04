@@ -18,5 +18,15 @@ public class FirstTest extends DriverConfiguration {
         Thread.sleep(3000);
     }
 
+
+    @Test
+    public void firstgTest() throws InterruptedException {
+        LoginPage loginPage = new LoginPage();
+        loginPage.loginToAccount();
+        Header header = new Header();
+        header.selectHeader("");
+        Thread.sleep(3000);
+    }
+
     //TODO make login -> OP && EC
 }
