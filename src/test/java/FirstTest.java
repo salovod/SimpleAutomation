@@ -2,6 +2,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.Resources;
 import pages.common.Header;
+import pages.villages.VillagePage;
 import preparation.DriverConfiguration;
 
 /**
@@ -10,14 +11,14 @@ import preparation.DriverConfiguration;
 public class FirstTest extends DriverConfiguration {
 
     Resources resources = new Resources();
+    VillagePage villagePage = new VillagePage();
 
     @Test
     public void firstTest() throws InterruptedException {
         LoginPage loginPage = new LoginPage();
         loginPage.loginToAccount();
         Header header = new Header();
-        header.selectHeader("");
-        Thread.sleep(3000);
+        header.selectHeader("resource");
     }
 
 
@@ -26,12 +27,8 @@ public class FirstTest extends DriverConfiguration {
         LoginPage loginPage = new LoginPage();
         loginPage.loginToAccount();
         Header header = new Header();
-        header.selectHeader("");
-        Thread.sleep(3000);
-        System.out.println(resources.getAvailableResource("wood"));
-        System.out.println(resources.getAvailableResource("clay"));
-        System.out.println(resources.getAvailableResource("iron"));
-        System.out.println(resources.getAvailableResource("crop"));
+        header.selectHeader("statistic");
+
     }
 
     //TODO make login -> OP && EC
