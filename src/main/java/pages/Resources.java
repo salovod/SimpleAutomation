@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.enums.RESOURCETYPE;
 
 import java.util.HashMap;
 
@@ -18,14 +19,14 @@ public class Resources {
 	private SelenideElement ironLocator = $("#l3");
 	private SelenideElement cropLocator = $("#l4");
 
-	HashMap<String, Integer> resources;
+	HashMap<RESOURCETYPE, Integer> resources;
 
 
 	public HashMap getAvailableResource() {
-		resources.put("wood", Integer.parseInt(woodLocator.getText()));
-		resources.put("clay", Integer.parseInt(clayLocator.getText()));
-		resources.put("iron", Integer.parseInt(ironLocator.getText()));
-		resources.put("crop", Integer.parseInt(cropLocator.getText()));
+		resources.put(RESOURCETYPE.WOOD, Integer.parseInt(woodLocator.getText()));
+		resources.put(RESOURCETYPE.CLAY, Integer.parseInt(clayLocator.getText()));
+		resources.put(RESOURCETYPE.IRON, Integer.parseInt(ironLocator.getText()));
+		resources.put(RESOURCETYPE.CROP, Integer.parseInt(cropLocator.getText()));
 		return resources;
 	}
 
@@ -33,7 +34,7 @@ public class Resources {
 		return Integer.parseInt(cropWareHouseLocator.getText());
 	}
 
-	public int getAvailableResource(String resource) {
+	public int getAvailableResource(RESOURCETYPE resource) {
 		return resources.get(resource);
 	}
 }
