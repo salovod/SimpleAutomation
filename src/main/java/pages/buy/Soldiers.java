@@ -40,6 +40,9 @@ public class Soldiers extends Resources {
 	}
 
 	private boolean possibility(SOLDERTYPE soldertype, int count) { //TODO create check available resources and needed for current solder type
+		if (getSolderAmount(soldertype)<count)
+			count = getSolderAmount(soldertype);
+
 		getNeededResources(SOLDERTYPE.LEGIONARE);
 		getAvailableResources();
 		for (RESOURCETYPE resourcetype : RESOURCETYPE.values()){
