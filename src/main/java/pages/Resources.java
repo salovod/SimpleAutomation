@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class Resources {
 
-    HashMap<RESOURCETYPE, Integer> resources;
+    HashMap<RESOURCETYPE, Integer> resources = new HashMap<>();
     private SelenideElement granary = $("#stockBarGranary");
     private SelenideElement warehouse = $("#stockBarWarehouse");
     private SelenideElement woodLocator = $("#l1");
@@ -20,11 +20,11 @@ public class Resources {
     private SelenideElement ironLocator = $("#l3");
     private SelenideElement cropLocator = $("#l4");
 
-	public HashMap getAvailableResource() {
-		resources.put(RESOURCETYPE.WOOD, Integer.parseInt(woodLocator.getText()));
-		resources.put(RESOURCETYPE.CLAY, Integer.parseInt(clayLocator.getText()));
-		resources.put(RESOURCETYPE.IRON, Integer.parseInt(ironLocator.getText()));
-		resources.put(RESOURCETYPE.CROP, Integer.parseInt(cropLocator.getText()));
+	public HashMap getAvailableResources() {
+		resources.put(RESOURCETYPE.WOOD, Integer.parseInt(woodLocator.getText().replaceAll("[^0-9]","")));
+		resources.put(RESOURCETYPE.CLAY, Integer.parseInt(clayLocator.getText().replaceAll("[^0-9]","")));
+		resources.put(RESOURCETYPE.IRON, Integer.parseInt(ironLocator.getText().replaceAll("[^0-9]","")));
+		resources.put(RESOURCETYPE.CROP, Integer.parseInt(cropLocator.getText().replaceAll("[^0-9]","")));
 		return resources;
 	}
 
