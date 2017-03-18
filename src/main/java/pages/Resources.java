@@ -15,16 +15,16 @@ public class Resources {
     HashMap<RESOURCETYPE, Integer> resources = new HashMap<>();
     private SelenideElement granary = $("#stockBarGranary");
     private SelenideElement warehouse = $("#stockBarWarehouse");
-    private SelenideElement woodLocator = $("#l1");
-    private SelenideElement clayLocator = $("#l2");
-    private SelenideElement ironLocator = $("#l3");
-    private SelenideElement cropLocator = $("#l4");
+    private SelenideElement wood = $("#l1");
+    private SelenideElement clay = $("#l2");
+    private SelenideElement iron = $("#l3");
+    private SelenideElement crop = $("#l4");
 
 	public HashMap getAvailableResources() {
-		resources.put(RESOURCETYPE.WOOD, Integer.parseInt(woodLocator.getText().replaceAll("[^0-9]","")));
-		resources.put(RESOURCETYPE.CLAY, Integer.parseInt(clayLocator.getText().replaceAll("[^0-9]","")));
-		resources.put(RESOURCETYPE.IRON, Integer.parseInt(ironLocator.getText().replaceAll("[^0-9]","")));
-		resources.put(RESOURCETYPE.CROP, Integer.parseInt(cropLocator.getText().replaceAll("[^0-9]","")));
+		resources.put(RESOURCETYPE.WOOD, Integer.parseInt(wood.getText().replaceAll("[^0-9]","")));
+		resources.put(RESOURCETYPE.CLAY, Integer.parseInt(clay.getText().replaceAll("[^0-9]","")));
+		resources.put(RESOURCETYPE.IRON, Integer.parseInt(iron.getText().replaceAll("[^0-9]","")));
+		resources.put(RESOURCETYPE.CROP, Integer.parseInt(crop.getText().replaceAll("[^0-9]","")));
 		return resources;
 	}
 
