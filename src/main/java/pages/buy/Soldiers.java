@@ -15,6 +15,7 @@ import static com.codeborne.selenide.Selenide.open;
  * Created by Sacred on 18.03.2017.
  */
 public class Soldiers extends Resources {
+	HashMap<RESOURCETYPE, Integer> neededResources = new HashMap<>();
 	private SelenideElement cropWareHouseLocator = $("#stockBarGranary");
 	private SelenideElement barWareHouseLocator = $("#stockBarWarehouse");
 	private SelenideElement wood = $(".trainUnits .r1"); //TODO check '.unit.u1' as a possible to select 'legioner' solder after adding new solder type
@@ -23,9 +24,6 @@ public class Soldiers extends Resources {
 	private SelenideElement crop = $(".trainUnits .r4");
 	private SelenideElement number = $("[name='t1']");
 	private SelenideElement amount = $(".details > a");
-
-
-	HashMap<RESOURCETYPE,Integer> neededResources = new HashMap<>();
 
 	public void navigateToBarak() {
 		open(Buildings.V1_BARRACKS);
@@ -54,11 +52,12 @@ public class Soldiers extends Resources {
 	}
 
 	public void createSolders( SOLDERTYPE soldertype, int count){
-		if(possibility(soldertype,count)){
-			if (getSolderAmount(soldertype)<count)
+		if (possibility(soldertype, count)) {
+			if (getSolderAmount(soldertype) < count) {
 				count = getSolderAmount(soldertype);
-			System.out.print("Create "+count+" "+soldertype);
+				System.out.print("Create " + count + " " + soldertype);
 //			number.val(String.valueOf(count)).pressEnter(); // temporary disable.
- }
+			}
+		}
 	}
 }
