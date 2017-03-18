@@ -1,6 +1,7 @@
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.Resources;
+import pages.buy.Building;
 import pages.common.Header;
 import pages.villages.VillagePage;
 import preparation.DriverConfiguration;
@@ -12,6 +13,7 @@ public class FirstTest extends DriverConfiguration {
 
     Resources resources = new Resources();
     VillagePage villagePage = new VillagePage();
+    Building building = new Building();
 
     @Test
     public void firstTest() throws InterruptedException {
@@ -27,7 +29,9 @@ public class FirstTest extends DriverConfiguration {
         LoginPage loginPage = new LoginPage();
         loginPage.loginToAccount();
         Header header = new Header();
-        header.selectHeader("statistic");
+        header.selectHeader("village");
+        building.clickOnWall();
+        Thread.sleep(3000);
 
     }
 
