@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.enums.RESOURCETYPE;
 
 import java.util.HashMap;
 
@@ -11,7 +12,6 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class Resources {
 
-    HashMap<String, Integer> resources;
     private SelenideElement cropWareHouseLocator = $("#stockBarGranary");
     private SelenideElement barWareHouseLocator = $("#stockBarWarehouse");
     private SelenideElement woodLocator = $("#l1");
@@ -30,7 +30,7 @@ public class Resources {
 		return resources;
 	}
 
-	public Integer getWarehouseCapacity(String warehouseCapacity) {
+	public Integer getWarehouseCapacity() {
 		return Integer.parseInt(cropWareHouseLocator.getText());
 	}
 
