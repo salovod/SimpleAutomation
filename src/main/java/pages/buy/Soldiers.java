@@ -22,7 +22,7 @@ public class Soldiers extends Resources {
     private SelenideElement clay = $(".trainUnits .r2");
     private SelenideElement iron = $(".trainUnits .r3");
     private SelenideElement crop = $(".trainUnits .r4");
-    private SelenideElement number = $("[name='t1']");
+    private SelenideElement soldiersNumber = $("[name='t1']");
     private SelenideElement amount = $(".details > a");
 
     public void navigateToBarak() {
@@ -56,7 +56,7 @@ public class Soldiers extends Resources {
             if (getSolderAmount(soldertype) < count) {
                 count = getSolderAmount(soldertype);
                 System.out.print("We can create " + count + " " + soldertype);
-//			number.val(String.valueOf(count)).pressEnter(); // temporary disable.
+//			soldiersNumber.val(String.valueOf(count)).pressEnter(); // temporary disable.
             }
         }
     }
