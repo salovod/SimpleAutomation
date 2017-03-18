@@ -34,6 +34,6 @@ public class Resources {
 	}
 
 	public int getAvailableResource(String resource) {
-		return resources.get(resource)
+		return resources.get(resource);
 	}
 }
