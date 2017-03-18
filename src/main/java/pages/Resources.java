@@ -18,66 +18,22 @@ public class Resources {
 	private SelenideElement ironLocator = $("#l3");
 	private SelenideElement cropLocator = $("#l4");
 
-	private int availableWood;
-	private int availableIron;
-	private int availableClay;
-	private int availableCrop;
-	private int stockCapacity;
-	private int cropCapacity;
-
 	HashMap<String, Integer> resources;
 
 
 	public HashMap getAvailableResource() {
-
-		availableWood = Integer.parseInt(woodLocator.getText());
-		availableClay = Integer.parseInt(clayLocator.getText());
-		availableIron = Integer.parseInt(ironLocator.getText());
-		availableCrop = Integer.parseInt(cropLocator.getText());
-		resources.put("wood",availableWood);
-		resources.put("clay",availableClay);
-		resources.put("iron",availableIron);
-		resources.put("crop",getAvailableCrop());
+		resources.put("wood", Integer.parseInt(woodLocator.getText()));
+		resources.put("clay", Integer.parseInt(clayLocator.getText()));
+		resources.put("iron", Integer.parseInt(ironLocator.getText()));
+		resources.put("crop", Integer.parseInt(cropLocator.getText()));
 		return resources;
 	}
 
-	public int getWarehouseCapacity(String warehouseCapacity) {
-		String temp;
-		switch (warehouseCapacity) {
-			case "crop":
-				temp = cropWareHouseLocator.getText();
-				cropCapacity = Integer.parseInt(temp);
-				return cropCapacity;
-			case "resource":
-				temp = barWareHouseLocator.getText();
-				stockCapacity = Integer.parseInt(temp);
-				return stockCapacity;
-			default:
-				return 0;
-		}
+	public Integer getWarehouseCapacity(String warehouseCapacity) {
+		return Integer.parseInt(cropWareHouseLocator.getText());
 	}
 
-	public int getAvailableClay() {
-		return availableClay;
-	}
-
-	public int getAvailableIron() {
-		return availableIron;
-	}
-
-	public int getAvailableWood() {
-		return availableWood;
-	}
-
-	public int getAvailableCrop() {
-		return availableCrop;
-	}
-
-	public int getStockCapacity() {
-		return stockCapacity;
-	}
-
-	public int getCropCapacity() {
-		return cropCapacity;
+	public int getAvailableResource(String resource) {
+		return resources.get(resource)
 	}
 }
