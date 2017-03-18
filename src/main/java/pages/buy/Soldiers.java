@@ -39,10 +39,7 @@ public class Soldiers extends Resources {
 
 	}
 
-	private boolean possibility(SOLDERTYPE soldertype, int count) { //TODO create check available resources and needed for current solder type
-		if (getSolderAmount(soldertype)<count)
-			count = getSolderAmount(soldertype);
-
+	private boolean possibility(SOLDERTYPE soldertype, int count) { //TODO create check available resources and needed for current solder type-----
 		getNeededResources(SOLDERTYPE.LEGIONARE);
 		getAvailableResources();
 		for (RESOURCETYPE resourcetype : RESOURCETYPE.values()){
@@ -57,8 +54,11 @@ public class Soldiers extends Resources {
 	}
 
 	public void createSolders( SOLDERTYPE soldertype, int count){
-		if(possibility(soldertype,count))
+		if(possibility(soldertype,count)){
+			if (getSolderAmount(soldertype)<count)
+				count = getSolderAmount(soldertype);
 			System.out.print("Create "+count+" "+soldertype);
 //			number.val(String.valueOf(count)).pressEnter(); // temporary disable.
+ }
 	}
 }
