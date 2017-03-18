@@ -2,7 +2,9 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.Resources;
 import pages.buy.Building;
+import pages.buy.Soldiers;
 import pages.common.Header;
+import pages.enums.SOLDERTYPE;
 import pages.villages.VillagePage;
 import preparation.DriverConfiguration;
 
@@ -30,9 +32,21 @@ public class FirstTest extends DriverConfiguration {
         loginPage.loginToAccount();
         Header header = new Header();
         header.selectHeader("village");
-        building.navigateToWallPage();
-        building.setBuildWall();
-//        building.setBuildWall();
+//        building.clickOnWall();
+        Thread.sleep(3000);
+
+    }
+
+    @Test
+    public void fistSolders() throws InterruptedException {
+        LoginPage loginPage = new LoginPage();
+        loginPage.loginToAccount();
+        Soldiers soldiers = new Soldiers();
+        soldiers.navigateToBarak();
+        soldiers.createSolders(SOLDERTYPE.LEGIONARE,1);
+//        building.clickOnWall();
+        Thread.sleep(3000);
+
     }
 
     //TODO make login -> OP && EC
