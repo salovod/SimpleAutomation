@@ -21,6 +21,7 @@ public class Soldiers extends Resources {
 	private SelenideElement clay = $(".trainUnits .r2");
 	private SelenideElement iron = $(".trainUnits .r3");
 	private SelenideElement crop = $(".trainUnits .r4");
+	private SelenideElement number = $("[name='t1']");
 
 	HashMap<RESOURCETYPE,Integer> neededResources = new HashMap<>();
 
@@ -36,20 +37,19 @@ public class Soldiers extends Resources {
 
 	}
 
-	private boolean possibility(SOLDERTYPE soldertype) { //TODO create check available resources and needed for current solder type
+	private boolean possibility(SOLDERTYPE soldertype, int count) { //TODO create check available resources and needed for current solder type
 		getNeededResources(SOLDERTYPE.LEGIONARE);
 		getAvailableResources();
 		for (RESOURCETYPE resourcetype : RESOURCETYPE.values()){
-			if (neededResources.get(resourcetype)>getAvailableResource(resourcetype))
+			if (neededResources.get(resourcetype)*count > getAvailableResource(resourcetype))
 				return false;
 		}
 		return true;
 	}
 
 	public void createSolders( SOLDERTYPE soldertype, int count){
-		if(possibility(soldertype)){
-			$("[name='t1']").val(String.valueOf(count)).pressEnter();
-		}
-
+		if(possibility(soldertype,count))
+			System.out.print("Create "+count+" "+soldertype);
+//			number.val(String.valueOf(count)).pressEnter(); // temporary disable.
 	}
 }
