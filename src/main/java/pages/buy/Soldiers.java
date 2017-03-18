@@ -22,6 +22,8 @@ public class Soldiers extends Resources {
 	private SelenideElement iron = $(".trainUnits .r3");
 	private SelenideElement crop = $(".trainUnits .r4");
 	private SelenideElement number = $("[name='t1']");
+	private SelenideElement amount = $(".details > a");
+
 
 	HashMap<RESOURCETYPE,Integer> neededResources = new HashMap<>();
 
@@ -45,6 +47,10 @@ public class Soldiers extends Resources {
 				return false;
 		}
 		return true;
+	}
+
+	private Integer getSolderAmount(SOLDERTYPE soldertype) {
+		return Integer.parseInt(amount.getText().replaceAll("[^0-9]",""));
 	}
 
 	public void createSolders( SOLDERTYPE soldertype, int count){
