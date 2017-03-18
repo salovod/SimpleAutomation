@@ -38,9 +38,6 @@ public class Resources {
         return Integer.parseInt(barWareHouseLocator.getText());
     }
 
-    public int getAvailableResource(String resource) {
-        return resources.get(resource);
-    }
 	public int getAvailableResource(RESOURCETYPE resource) {
 		return resources.get(resource);
 	}
