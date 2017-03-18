@@ -34,10 +34,7 @@ public class VillagePage extends PageRules {
         return returnAmountOfResourceFactories("Глиняный");
     }
 
-    public void getAllAmount() {
-        getAmountOfFarms();
-        getAmountOfWood();
-        getAmountOfIron();
-        getAmountOfCrop();
+    public int[] getAllAmount() {
+        return new int[]{getAmountOfFarms(),getAmountOfWood(),getAmountOfIron(),getAmountOfCrop()};
     }
 }
