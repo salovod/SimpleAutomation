@@ -12,15 +12,13 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class Resources {
 
-    private SelenideElement cropWareHouseLocator = $("#stockBarGranary");
-    private SelenideElement barWareHouseLocator = $("#stockBarWarehouse");
+    HashMap<RESOURCETYPE, Integer> resources;
+    private SelenideElement granary = $("#stockBarGranary");
+    private SelenideElement warehouse = $("#stockBarWarehouse");
     private SelenideElement woodLocator = $("#l1");
     private SelenideElement clayLocator = $("#l2");
     private SelenideElement ironLocator = $("#l3");
     private SelenideElement cropLocator = $("#l4");
-
-	HashMap<RESOURCETYPE, Integer> resources;
-
 
 	public HashMap getAvailableResource() {
 		resources.put(RESOURCETYPE.WOOD, Integer.parseInt(woodLocator.getText()));
@@ -31,11 +29,11 @@ public class Resources {
 	}
 
 	public Integer getWarehouseCapacity() {
-		return Integer.parseInt(cropWareHouseLocator.getText());
-	}
+        return Integer.parseInt(granary.getText());
+    }
 
-    public Integer getBarWareHouseLocator() {
-        return Integer.parseInt(barWareHouseLocator.getText());
+    public Integer getWarehouse() {
+        return Integer.parseInt(warehouse.getText());
     }
 
 	public int getAvailableResource(RESOURCETYPE resource) {

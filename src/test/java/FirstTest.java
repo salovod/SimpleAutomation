@@ -30,9 +30,9 @@ public class FirstTest extends DriverConfiguration {
         loginPage.loginToAccount();
         Header header = new Header();
         header.selectHeader("village");
-        building.clickOnWall();
-        Thread.sleep(3000);
-
+        building.navigateToWallPage();
+        building.setBuildWall();
+//        building.setBuildWall();
     }
 
     //TODO make login -> OP && EC
