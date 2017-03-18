@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$$;
  */
 public class Building {
 
-    private SelenideElement wall = $$("[alt*='Стена']").get(0);
+    private SelenideElement wall = $$("#clickareas > area:nth-child(22)").get(0);
 
     public void clickOnWall() {
         wall.click();
